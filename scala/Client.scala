@@ -16,17 +16,16 @@ object Client {
     val finish = Platform.currentTime
     val elapsedTime = (finish - start) / 1000.0
 
-    printf("Count is ~p~n",count)
+    printf("Count is %s%n",count)
     printf("Test took %s seconds%n", elapsedTime)
     printf("Throughput=%s per sec%n", msgCount / elapsedTime)
   }
 
-  def theTest(msgCount: Int) {
-
+  def theTest(msgCount: Int) :Any = {
     val bytesPerMsg = 100
     val updates = (1 to msgCount).par.foreach((x: Int) => counter ! new AddCount(bytesPerMsg))
 
-    counter !? new GetAndReset
+    val count = counter !? new GetAndReset
+    return count
   }
-
 }
