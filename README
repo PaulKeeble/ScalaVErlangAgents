@@ -8,6 +8,8 @@ Two implementations are provided, one using Erlang's OTP gen_server and one usin
 
 With Scala 2.9.0 and Erlang 5.8.1 the Erlang implementation is 6x faster than Scala.
 
-To run the erlang version compile the 3 files then run client:runTest(3000000).
+To run the erlang OTP version compile the 3 files then run client:runTest(3000000).
+
+To run the erlang bare receive version compile server2 as well and then run client:runTest2(3000000).
 
 To run the scala version compile both files and run the Client. 
