@@ -1,0 +1,13 @@
+Erlang V Scala Agents
+
+An implementation of a performance test comparing an Agent that has just two responsibilties:
+1) Add a Count X to the agents current tally
+2) Get the current count and reset the agent count to zero
+
+Two implementations are provided, one using Erlang's OTP gen_server and one using Scala's Actors.
+
+With Scala 2.9.0 and Erlang 5.8.1 the Erlang implementation is 6x faster than Scala.
+
+To run the erlang version compile the 3 files then run client:runTest(3000000).
+
+To run the scala version compile both files and run the Client. 
