@@ -7,16 +7,16 @@ class CounterActor extends Actor {
   var count: Long = 0
 
   def act() {
-    loop {
       react {
         case GetAndReset() =>
           val current = count
           count = 0
           reply(current)
+          act
         case AddCount(extraCount) =>
           count=count+extraCount
+          act
       }
-    }
   }
   start()
 }
